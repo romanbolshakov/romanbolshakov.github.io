@@ -4,6 +4,7 @@ firebase.initializeApp({
 
 if ('Notification' in window){
 	var messaging = firebase.messaging();
+	console.log('Hit', messaging);
 
 	if (Notification.permission == 'granted'){
 		subscribe();
@@ -13,6 +14,7 @@ if ('Notification' in window){
 };
 
 function suscribe(){
+	console.log('subscribe');
 	messaging.requestPermission()
 		.then(function(){
 			messaging.getToken()
