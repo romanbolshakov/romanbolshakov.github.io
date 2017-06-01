@@ -39,9 +39,9 @@ function sendTokenToServer(token){
 	if (isNewToken(token)){
 		console.log('Send token to the server: before');
 		const url = '';
-		$.post(url, {
-			token: currentToken
-		});
+		// $.post(url, {
+		// 	token: currentToken
+		// });
 		saveTokenLocal(token);
 	}
 	else{
