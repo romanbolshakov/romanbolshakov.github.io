@@ -14,7 +14,7 @@ if ('Notification' in window){
 	subscribe();
 };
 
-function suscribe(){
+function subscribe(){
 	console.log('subscribe');
 	messaging.requestPermission()
 		.then(function(){
