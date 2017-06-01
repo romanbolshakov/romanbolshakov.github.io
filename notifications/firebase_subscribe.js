@@ -11,6 +11,7 @@ if ('Notification' in window){
 	}
 
 	// subscribe by click
+	subscribe();
 };
 
 function suscribe(){
