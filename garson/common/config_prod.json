@@ -1,0 +1,13 @@
+{
+  "env": {
+    "name": "prod",
+    "isProd": true,
+    "isDev": false
+  },
+  "debug": {
+    "level": {
+      "request": false
+    },
+    "enable": false
+  }
+}

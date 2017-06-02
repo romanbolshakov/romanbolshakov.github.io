@@ -1,0 +1,11 @@
+<button class="price btn btn-gold j-price" (click)="order.addPosition(product, {isDuration: true, isAddFirst: true})">
+  {{ (order.list[product.id]) ? (order.list[product.id].count + ' x') : '' }} {{ product.price }} руб
+</button>
+
+<div class="j-order h-hide"> <!-- timer -->
+  <button class="j-order-btn price btn btn-gold" (click)="order.addPosition(product)">+</button>
+  <span [ngClass]="{'h-error': (order.list[product.id]) ? order.list[product.id].error : false}">
+    {{ (order.list[product.id]) ? order.list[product.id].count : 0 }}
+  </span>
+  <button class="j-order-btn price btn btn-gold" (click)="order.delPosition(product)">-</button>
+</div>

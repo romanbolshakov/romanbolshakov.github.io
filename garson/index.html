@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Garson</title>
+
+    <!-- Favicon Icons -->
+    <link rel="shortcut icon" href="frontend/assets/img/favicon/favicon.ico">
+    <!-- Standard iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="frontend/assets/img/favicon/apple-touch-icon-57x57.png">
+    <!-- Retina iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="114x114" href="frontend/assets/img/favicon/apple-touch-icon-114x114.png">
+    <!-- Standard iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="72x72" href="frontend/assets/img/favicon/apple-touch-icon-72x72.png">
+    <!-- Retina iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="144x144" href="frontend/assets/img/favicon/apple-touch-icon-144x144.png">
+
+    <!-- project styles -->
+    <link rel="stylesheet"  href="frontend/assets/css/style.css">
+
+    <!-- Polyfills -->
+    <script src="https://unpkg.com/core-js/client/shim.min.js"></script>
+    
+  </head>
+  <body>
+
+    <main>
+      <!-- Loader
+          ============================================= -->
+      <div id="loader">
+        <div class="loader-item"> <img src="frontend/assets/img/logo.png" style="max-width:200px">
+          <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Loader -->
+    </main>
+
+    <!-- project scripts -->
+    <script src="frontend/assets/js/script.js"></script>
+
+    <!-- system -->
+    <script src="system/common.js"></script>
+    <script>
+      System.import('frontend/app').catch(console.log.bind(console));
+    </script>
+
+  </body>
+</html>
