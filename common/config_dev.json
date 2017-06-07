@@ -1,0 +1,17 @@
+{
+  "api": "http://localhost:1337",
+  "env": {
+    "name": "dev",
+    "isProd": false,
+    "isDev": true,
+    "data": {
+      "institutionSlug": "bristle"
+    }
+  },
+  "debug": {
+    "level": {
+      "request": false
+    },
+    "enable": true
+  }
+}

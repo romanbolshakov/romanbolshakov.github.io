@@ -1,0 +1,69 @@
+{
+  "succes": true,
+  "data": [
+    {
+      "products": [
+        {
+          "category_id": 1,
+          "title": "Pizza 1",
+          "description": "Pizza desc",
+          "weight": "190/30/50",
+          "image": "/img_11.png",
+          "price": 100,
+          "ingredients": null,
+          "id": 1,
+          "createdAt": null,
+          "updatedAt": null
+        },
+        {
+          "category_id": 1,
+          "title": "Pizza 2",
+          "description": "Pizza desc",
+          "weight": "200/40/30",
+          "image": "/img_12.png",
+          "price": 120,
+          "ingredients": null,
+          "id": 2,
+          "createdAt": null,
+          "updatedAt": null
+        }
+      ],
+      "title": "Pizza",
+      "id": 1,
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "products": [
+        {
+          "category_id": 2,
+          "title": "Beer 1",
+          "description": "Beer 1 desc",
+          "weight": null,
+          "image": "/img_21.png",
+          "price": 50,
+          "ingredients": null,
+          "id": 3,
+          "createdAt": null,
+          "updatedAt": null
+        },
+        {
+          "category_id": 2,
+          "title": "Beer 2",
+          "description": "Beer 2 desc",
+          "weight": null,
+          "image": "/img_22.png",
+          "price": 49.5,
+          "ingredients": null,
+          "id": 4,
+          "createdAt": null,
+          "updatedAt": null
+        }
+      ],
+      "title": "Beers",
+      "id": 2,
+      "createdAt": null,
+      "updatedAt": null
+    }
+  ]
+}
