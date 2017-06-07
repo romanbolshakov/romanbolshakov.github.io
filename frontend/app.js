@@ -75,7 +75,8 @@ System.register("frontend/app", ["angular2/core", "angular2/platform/browser", "
             });
             var pos = location.host.indexOf('.');
             var slug = location.host.substr(0, pos);
-            if ($this.app.env.isDev && location.hostname === 'localhost') {
+            console.log('Location: ', location);
+            if ($this.app.env.isDev && (location.hostname === 'localhost' || location.hostname === 'romanbolshakov.github.io')) {
               slug = $this.app.env.data.institutionSlug;
             }
             $this.http.get('/institution/' + slug + '/init', function(res) {
