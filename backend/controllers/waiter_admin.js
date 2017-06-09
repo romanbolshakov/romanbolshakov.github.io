@@ -47,11 +47,11 @@ System.register("backend/controllers/waiter_admin", ["angular2/core", "common/co
               return item.id == stateId;
             });
           }, this.setNextStateOrder = function(event, order) {
-            order.state_id = order.nextState.id;
+            order.state.id = order.nextState.id;
             $this.updateOrderState(order, order.nextState.id);
           }, this.updateOrderState = function(order, newStateId) {
             $this.http.put('/order/' + order.id + '/state', {new_state_id: newStateId}, function(res) {
-              order.state_id = newStateId;
+              order.state.id = newStateId;
               $this.updateOrderVisualState(order);
             });
           }, this.updateOrderVisualState = function(order) {
