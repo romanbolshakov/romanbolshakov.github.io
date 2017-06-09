@@ -43,19 +43,21 @@ System.register("backend/controllers/waiter_admin", ["angular2/core", "common/co
           }], this.orderStateFilterArgs = {stateId: -1}, this.institution = {}, this.cancelOrder = function(event, order) {
             $this.updateOrderState(order, 0);
           }, this.getStateById = function(stateId) {
-            return $this.stateCatalog.find(function(item) {
-              return item.id == stateId;
+            var result;
+            $this.stateCatalog.forEach(function(item) {
+              if (item.id == stateId)
+                result = item;
             });
+            console.log($this.stateCatalog);
+            return result;
           }, this.setNextStateOrder = function(event, order) {
-            order.state.id = order.nextState.id;
             $this.updateOrderState(order, order.nextState.id);
           }, this.updateOrderState = function(order, newStateId) {
             $this.http.put('/order/' + order.id + '/state', {new_state_id: newStateId}, function(res) {
-              order.state.id = newStateId;
-              $this.updateOrderVisualState(order);
+              $this.updateOrderVisualState(order, newStateId);
             });
-          }, this.updateOrderVisualState = function(order) {
-            order.state = $this.getStateById(order.state.id);
+          }, this.updateOrderVisualState = function(order, newStateId) {
+            order.state = $this.getStateById(newStateId);
             if (order.state.id == 0) {
               var newState = $this.getStateById(1);
               order.nextState = {
@@ -86,7 +88,7 @@ System.register("backend/controllers/waiter_admin", ["angular2/core", "common/co
               var m = item.dateCreate.getMinutes();
               m = m < 10 ? '0' + m : m;
               item.complexId = item.id.toString() + '/' + h.toString() + m.toString();
-              $this.updateOrderVisualState(item);
+              $this.updateOrderVisualState(item, item.state.id);
               return item;
             });
             orders.forEach(function(order) {
