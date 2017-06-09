@@ -1,1 +1,1 @@
-{"api":"http://api.garson.pro:1337","env":{"name":"dev","isProd":false,"isDev":true,"data":{"institutionSlug":"bristle"}},"debug":{"level":{"request":false},"enable":true},"name":"frontend","page":{"titles":{"menu":"Menu","menu/.+":"Menu - Dish"}},"data":{"url":{},"institution":{}}}
+{"api":"https://api.garson.pro:1337","env":{"name":"dev","isProd":false,"isDev":true,"data":{"institutionSlug":"bristle"}},"debug":{"level":{"request":false},"enable":true},"name":"frontend","page":{"titles":{"menu":"Menu","menu/.+":"Menu - Dish"}},"data":{"url":{},"institution":{}}}
