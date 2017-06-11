@@ -69,6 +69,7 @@ System.register("frontend/app", ["angular2/core", "angular2/platform/browser", "
           this.http = http;
           this.app.name = 'frontend';
           this.app.onAfterInitConfig = function() {
+            console.log('Before getDeviceToken');
             garsonMessaging.getDeviceToken().then(function(token) {
               $this.app.headers['DeviceToken'] = token;
               console.log('NEW HIT', token);
