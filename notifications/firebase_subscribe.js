@@ -6,6 +6,8 @@ if ('Notification' in window){
 	var messaging = firebase.messaging();
 	console.log('Hit', messaging);
 
+	messaging.deleteToken('e0HMUg_5lYM:APA91bH4p9PDdu6Y72nZjtNxk8fvbKVHpZQXRREgsEH00bp9SXsb7jjTpqlg0F12zn-lwu9SGWO9bsdVpcSJOF9zJoAr8zB5Yh--XXReNkoSTQXkiFn-6FmVklx08LBenZqkYzZq4DJx');
+
 	if (Notification.permission == 'granted'){
 		subscribe();
 	}
