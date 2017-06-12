@@ -87,43 +87,43 @@ if (window.location.protocol === 'https:' &&
     });
 
     // handle catch the notification on current page
-    messaging.onMessage(function(payload) {
-        console.log('Message received. ', payload);
-        info.show();
-        info_message
-            .text('')
-            .append('<strong>'+payload.notification.title+'</strong>')
-            .append('<em> '+payload.notification.body+'</em>')
-        ;
+    // messaging.onMessage(function(payload) {
+    //     console.log('Message received. ', payload);
+    //     info.show();
+    //     info_message
+    //         .text('')
+    //         .append('<strong>'+payload.notification.title+'</strong>')
+    //         .append('<em> '+payload.notification.body+'</em>')
+    //     ;
 
-        // register fake ServiceWorker for show notification on mobile devices
-        navigator.serviceWorker.register('messaging-sw.js');
-        Notification.requestPermission(function(permission) {
-            if (permission === 'granted') {
-                navigator.serviceWorker.ready.then(function(registration) {
-                    payload.notification.data = payload.notification;
-                    registration.showNotification(payload.notification.title, payload.notification);
-                }).catch(function(error) {
-                    // registration failed :(
-                    showError('ServiceWorker registration failed.', error);
-                });
-            }
-        });
-    });
+    //     // register fake ServiceWorker for show notification on mobile devices
+    //     navigator.serviceWorker.register('messaging-sw.js');
+    //     Notification.requestPermission(function(permission) {
+    //         if (permission === 'granted') {
+    //             navigator.serviceWorker.ready.then(function(registration) {
+    //                 payload.notification.data = payload.notification;
+    //                 registration.showNotification(payload.notification.title, payload.notification);
+    //             }).catch(function(error) {
+    //                 // registration failed :(
+    //                 showError('ServiceWorker registration failed.', error);
+    //             });
+    //         }
+    //     });
+    // });
 
-    // Callback fired if Instance ID token is updated.
-    messaging.onTokenRefresh(function() {
-        messaging.getToken()
-            .then(function(refreshedToken) {
-                console.log('Token refreshed.');
-                // Send Instance ID token to app server.
-                sendTokenToServer(refreshedToken);
-                updateUIForPushEnabled(refreshedToken);
-            })
-            .catch(function(error) {
-                showError('Unable to retrieve refreshed token.', error);
-            });
-    });
+    // // Callback fired if Instance ID token is updated.
+    // messaging.onTokenRefresh(function() {
+    //     messaging.getToken()
+    //         .then(function(refreshedToken) {
+    //             console.log('Token refreshed.');
+    //             // Send Instance ID token to app server.
+    //             sendTokenToServer(refreshedToken);
+    //             updateUIForPushEnabled(refreshedToken);
+    //         })
+    //         .catch(function(error) {
+    //             showError('Unable to retrieve refreshed token.', error);
+    //         });
+    // });
 
 } else {
     if (window.location.protocol !== 'https:') {
