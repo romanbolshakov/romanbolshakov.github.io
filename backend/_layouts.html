@@ -1,0 +1,23 @@
+<section [ngSwitch]="layout">
+
+  <!-- layout [default] -->
+  <div *ngSwitchWhen="'default'">
+    <span>
+        <a [routerLink]="['Home']">Home</a>
+        <a [routerLink]="['About']">About</a>
+    </span>
+
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-- layout [auth] -->
+  <div *ngSwitchWhen="'auth'">
+    Login
+
+    <router-outlet></router-outlet>
+  </div>
+
+</section>
+
+<button (click)="layout='auth'">Layout change</button>
+front - <front></front>

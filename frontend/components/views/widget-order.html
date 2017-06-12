@@ -1,0 +1,20 @@
+<div class="order" *ngIf="(order.state == 'send') || (order.list | objLength)">
+  <span class="order__total" *ngIf="order.total.price">
+    Итого: {{ order.total.price }} руб
+  </span>
+
+  <button class="price btn btn-gold h-right" (click)="onOrder()">
+    <span *ngIf="!(router.currentInstruction.component.routeName == 'Order')"><i>Заказ ></i></span>
+    <span *ngIf="(router.currentInstruction.component.routeName == 'Order')" [ngSwitch]="order.state">
+      <i *ngSwitchWhen="'add'">
+        Подтвердить >
+      </i>
+      <i *ngSwitchWhen="'form'">
+        Отправить >
+      </i>
+      <i *ngSwitchWhen="'send'">
+        Заказать еще
+      </i>
+    </span>
+  </button>
+</div>
