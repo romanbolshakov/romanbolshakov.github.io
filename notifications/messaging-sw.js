@@ -1,11 +1,3 @@
-importScripts('https://www.gstatic.com/firebasejs/3.7.2/firebase-app.js');
-importScripts('https://www.gstatic.com/firebasejs/3.7.2/firebase-messaging.js');
-
-firebase.initializeApp({
-    'messagingSenderId': '448358493027'
-});
-
-firebase.messaging();
 
 self.addEventListener('notificationclick', function(event) {
     const target = event.notification.data.click_action || '/';
@@ -23,7 +15,7 @@ self.addEventListener('notificationclick', function(event) {
                 return client.focus();
             }
         }
-    
+
         return clients.openWindow(target);
     }));
 });
