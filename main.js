@@ -42,6 +42,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routes = [
+    { path: '', component: _brief_brief_component__WEBPACK_IMPORTED_MODULE_3__["BriefComponent"] },
     { path: 'brief', component: _brief_brief_component__WEBPACK_IMPORTED_MODULE_3__["BriefComponent"] }
 ];
 var AppRoutingModule = /** @class */ (function () {
